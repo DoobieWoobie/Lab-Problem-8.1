@@ -1,15 +1,23 @@
 #include <iostream>
 using namespace std;
-int countCharacter(string str)
+int countVowel(string str)
 {
-	int count = str.size();
-	return count;
+	int vowel = 0;
+	for (int i = 0; str[i]; i++)
+	{
+		if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u'
+			|| str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U')
+		{
+			vowel++;
+		}
+	}
+	return vowel;
 }
 int main()
 {
 	string str;
 	cout << "Enter string: ";
 	cin >> str;
-	int result = countCharacter(str);
-	cout << "Number of characters in string is: " << result;
+	int result = countVowel(str);
+	cout << "Number of vowels in string is: " << result;
 }
