@@ -1,5 +1,7 @@
 #include <iostream>
+#include <string>
 using namespace std;
+//string function
 int countVowel(string str)
 {
 	int vowel = 0;
@@ -13,11 +15,23 @@ int countVowel(string str)
 	}
 	return vowel;
 }
+//Main
 int main()
 {
-	string str;
-	cout << "Enter string: ";
-	cin >> str;
-	int result = countVowel(str);
-	cout << "Number of vowels in string is: " << result;
+	bool input = true;
+	while (input)
+	{
+		string str;
+		cout << "Enter string or Q to quit: ";
+		getline(cin, str);
+		int result = countVowel(str);
+		if (str == "Q")
+		{
+			input = false;
+		}
+		else
+		{
+			cout << "Vowel count: " << result << endl;
+		}
+	}return 0;
 }
